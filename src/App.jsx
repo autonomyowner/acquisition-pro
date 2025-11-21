@@ -51,9 +51,7 @@ function Navigation() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#" className="logo">
-          Acquisition<span>Pro</span>
-        </a>
+        <a href="#" className="logo"><img src="/logo.jpg" alt="AcquisitionPro" className="logo-image" />Acquisition<span>Pro</span></a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
@@ -97,7 +95,7 @@ function Hero() {
         >
           <motion.div className="hero-badge" variants={fadeInUp}>
             <span className="hero-badge-dot" />
-            Now accepting new clients for Q1 2025
+            For Executive & Leadership Coaches Only
           </motion.div>
 
           <motion.h1 className="hero-title" variants={fadeInUp}>
@@ -106,12 +104,12 @@ function Hero() {
           </motion.h1>
 
           <motion.p className="hero-description" variants={fadeInUp}>
-            We build predictable lead generation systems that fill your pipeline with qualified prospects ready to buy. No more guesswork. Just results.
+            We help executive and leadership coaches book 10-15 qualified appointments in 30 days. High-ticket clients who are ready to invest in transformation.
           </motion.p>
 
           <motion.div className="hero-cta-group" variants={fadeInUp}>
-            <a href="#contact" className="btn-primary">
-              Book Strategy Call
+            <a href="https://calendly.com/acquisition-pro/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Book Discovery Call
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -123,16 +121,16 @@ function Hero() {
 
           <motion.div className="hero-stats" variants={fadeInUp}>
             <div className="stat-item" ref={stat1.ref}>
-              <div className="stat-number">${stat1.count}K+</div>
-              <div className="stat-label">Revenue Generated</div>
+              <div className="stat-number">{stat1.count}+</div>
+              <div className="stat-label">Coaches Served</div>
             </div>
             <div className="stat-item" ref={stat2.ref}>
               <div className="stat-number">{stat2.count}%</div>
-              <div className="stat-label">Client Retention</div>
+              <div className="stat-label">Show-Up Rate</div>
             </div>
             <div className="stat-item" ref={stat3.ref}>
-              <div className="stat-number">{stat3.count}x</div>
-              <div className="stat-label">Average ROI</div>
+              <div className="stat-number">{stat3.count}0</div>
+              <div className="stat-label">Days to Results</div>
             </div>
           </motion.div>
         </motion.div>
@@ -147,13 +145,13 @@ function TrustBar() {
     <section className="trust-bar">
       <div className="container">
         <div className="trust-bar-inner">
-          <span className="trust-label">Trusted by industry leaders</span>
+          <span className="trust-label">Trusted by coaches worldwide</span>
           <div className="trust-logos">
-            <span className="trust-logo">TechFlow</span>
-            <span className="trust-logo">ScaleUp</span>
-            <span className="trust-logo">GrowthX</span>
-            <span className="trust-logo">Elevate</span>
-            <span className="trust-logo">Nexus</span>
+            <span className="trust-logo">ICF Certified</span>
+            <span className="trust-logo">Forbes Coaches</span>
+            <span className="trust-logo">Marshall Goldsmith</span>
+            <span className="trust-logo">CTI Trained</span>
+            <span className="trust-logo">iPEC Certified</span>
           </div>
         </div>
       </div>
@@ -177,19 +175,19 @@ function ProblemSection() {
         >
           <motion.div className="problem-content" variants={fadeInUp}>
             <span className="section-label">The Problem</span>
-            <h2>Most Businesses <span className="dim">Struggle</span> With Lead Gen</h2>
+            <h2>Most Coaches <span className="dim">Struggle</span> to Find Clients</h2>
             <ul className="problem-list">
-              <li>Inconsistent lead flow makes forecasting impossible</li>
-              <li>Wasting budget on ads that don't convert</li>
-              <li>Sales team chasing unqualified prospects</li>
-              <li>No system to nurture and close deals at scale</li>
+              <li>Relying on referrals that come unpredictably</li>
+              <li>Spending hours on social media with no ROI</li>
+              <li>Discovery calls with people who can't afford your rates</li>
+              <li>No predictable system to fill your calendar</li>
             </ul>
           </motion.div>
           <motion.div className="problem-visual" variants={fadeInUp}>
             <div className="problem-card">
-              <div className="problem-card-stat">68%</div>
-              <div className="problem-card-text">of businesses fail</div>
-              <div className="problem-card-sub">due to poor lead generation and customer acquisition</div>
+              <div className="problem-card-stat">82%</div>
+              <div className="problem-card-text">of coaches earn under $50K</div>
+              <div className="problem-card-sub">because they lack a consistent client acquisition system</div>
             </div>
           </motion.div>
         </motion.div>
@@ -206,33 +204,33 @@ function ServicesSection() {
   const services = [
     {
       number: "01",
-      title: "Lead Generation Systems",
-      description: "Custom-built funnels and automation that attract, capture, and qualify leads 24/7 without manual effort."
+      title: "LinkedIn Outreach System",
+      description: "Targeted outreach to executives and business owners who need leadership coaching. Warm connections, not cold spam."
     },
     {
       number: "02",
-      title: "Paid Advertising",
-      description: "Strategic ad campaigns across Meta, Google, and LinkedIn that deliver qualified leads at profitable CAC."
+      title: "Meta & LinkedIn Ads",
+      description: "Precision-targeted campaigns that reach decision-makers actively seeking executive coaching and leadership development."
     },
     {
       number: "03",
-      title: "Sales Funnel Optimization",
-      description: "Data-driven funnel improvements that increase conversion rates and maximize every dollar you spend."
+      title: "High-Ticket Funnel",
+      description: "Conversion-optimized funnels designed for $3K-$15K+ coaching packages. Pre-qualify leads before they book."
     },
     {
       number: "04",
-      title: "CRM & Automation",
-      description: "Seamless systems that nurture leads automatically and give your sales team the tools to close faster."
+      title: "Appointment Booking",
+      description: "10-15 qualified discovery calls on your calendar monthly with executives ready to invest in their growth."
     },
     {
       number: "05",
-      title: "Appointment Setting",
-      description: "Qualified meetings booked directly on your calendar with decision-makers ready to buy."
+      title: "Lead Nurturing",
+      description: "Automated email and SMS sequences that warm up prospects and boost your show-up rates to 90%+."
     },
     {
       number: "06",
-      title: "Analytics & Reporting",
-      description: "Real-time dashboards showing exactly where your leads come from and what's driving revenue."
+      title: "Sales Call Support",
+      description: "Scripts, frameworks, and optional call reviews to help you close more high-ticket coaching clients."
     }
   ]
 
@@ -246,8 +244,8 @@ function ServicesSection() {
           variants={fadeInUp}
         >
           <span className="section-label">What We Do</span>
-          <h2>Revenue-Driving Services</h2>
-          <p>Everything you need to build a predictable, scalable lead generation machine.</p>
+          <h2>Your Client Acquisition System</h2>
+          <p>Everything you need to book 10-15 qualified appointments every month with high-ticket coaching prospects.</p>
         </motion.div>
 
         <motion.div
@@ -276,24 +274,16 @@ function ProcessSection() {
 
   const steps = [
     {
-      number: "1",
-      title: "Discovery Call",
-      description: "We dive deep into your business, understand your ideal customer, and identify the biggest opportunities for growth."
+      number: "1", title: "Strategy Session", description: "We analyze your coaching niche, ideal client profile, and current client acquisition methods to build your custom system."
     },
     {
-      number: "2",
-      title: "Custom Strategy",
-      description: "Our team builds a tailored acquisition strategy designed specifically for your market, budget, and goals."
+      number: "2", title: "Funnel Build-Out", description: "We create your high-converting landing pages, lead magnets, and automated follow-up sequences for executive prospects."
     },
     {
-      number: "3",
-      title: "System Build-Out",
-      description: "We implement your lead generation system—funnels, ads, automations—everything working together seamlessly."
+      number: "3", title: "Campaign Launch", description: "We launch targeted LinkedIn outreach and paid ads to reach executives and leaders actively seeking coaching."
     },
     {
-      number: "4",
-      title: "Launch & Optimize",
-      description: "Go live and start generating leads. We continuously test, optimize, and scale what's working to maximize ROI."
+      number: "4", title: "Appointments Flow In", description: "Watch your calendar fill with 10-15 qualified discovery calls monthly. We optimize continuously for maximum show-up rates."
     }
   ]
 
@@ -307,8 +297,8 @@ function ProcessSection() {
           variants={fadeInUp}
         >
           <span className="section-label">How It Works</span>
-          <h2>From Zero to Revenue in 4 Steps</h2>
-          <p>Our proven process gets you results fast without the complexity.</p>
+          <h2>From Zero to Booked Calls in 4 Steps</h2>
+          <p>Our proven process fills your calendar with qualified coaching prospects in 30 days.</p>
         </motion.div>
 
         <motion.div
@@ -340,30 +330,30 @@ function TestimonialsSection() {
   const testimonials = [
     {
       quote: '"',
-      text: "Acquisition Pro transformed our business. We went from struggling to find leads to having a full pipeline in just 60 days. The ROI has been incredible.",
-      result: "312%",
-      resultLabel: "Increase in qualified leads",
-      name: "Marcus Chen",
-      role: "CEO, TechFlow Solutions",
-      initials: "MC"
+      text: "Before working with Acquisition Pro, I was doing 2-3 discovery calls a month if I was lucky. Now I have 12-15 qualified calls every month with executives who actually need my help.",
+      result: "$8.5K",
+      resultLabel: "Added monthly revenue",
+      name: "Jennifer Hayes",
+      role: "Executive Leadership Coach",
+      initials: "JH"
     },
     {
       quote: '"',
-      text: "Their team doesn't just run ads—they build systems. Our cost per lead dropped by 40% while lead quality went through the roof.",
-      result: "$2.4M",
-      resultLabel: "Pipeline generated in 90 days",
-      name: "Sarah Williams",
-      role: "VP Marketing, ScaleUp Inc",
-      initials: "SW"
+      text: "They understand the coaching industry. My calendar is now consistently booked with C-suite executives and business owners, not tire-kickers who can't afford coaching.",
+      result: "14",
+      resultLabel: "Qualified calls in first month",
+      name: "Michael Torres",
+      role: "CEO Performance Coach",
+      initials: "MT"
     },
     {
       quote: '"',
-      text: "Finally, an agency that delivers what they promise. We now have predictable revenue and a sales team that actually has leads to call.",
-      result: "47",
-      resultLabel: "Qualified meetings per month",
-      name: "David Park",
-      role: "Founder, GrowthX Agency",
-      initials: "DP"
+      text: "I was skeptical at first, but the results speak for themselves. Closed 3 high-ticket clients in my first 30 days. The ROI paid for itself in week one.",
+      result: "$12K",
+      resultLabel: "First month coaching revenue",
+      name: "Amanda Richardson",
+      role: "Leadership Development Coach",
+      initials: "AR"
     }
   ]
 
@@ -377,8 +367,8 @@ function TestimonialsSection() {
           variants={fadeInUp}
         >
           <span className="section-label">Results</span>
-          <h2>What Our Clients Say</h2>
-          <p>Real results from real businesses we've helped scale.</p>
+          <h2>What Coaches Are Saying</h2>
+          <p>Real results from executive and leadership coaches we've helped grow.</p>
         </motion.div>
 
         <motion.div
@@ -432,25 +422,17 @@ function CTASection() {
           variants={fadeInUp}
         >
           <div className="cta-content">
-            <h2>Ready to <span className="highlight">Scale</span>?</h2>
-            <p>Book a free strategy call and discover how we can fill your pipeline with qualified leads in 30 days or less.</p>
-            <form className="cta-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                className="cta-input"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button type="submit" className="btn-primary">
-                Get Free Strategy
+            <h2>Ready to Fill Your <span className="highlight">Calendar</span>?</h2>
+            <p>Book a free discovery call and see how we can get you 10-15 qualified appointments in the next 30 days.</p>
+            <div className="cta-form">
+              <a href="https://calendly.com/acquisition-pro/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Book Your Discovery Call
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
-            </form>
-            <p className="cta-guarantee">No spam. Unsubscribe anytime. Results guaranteed or your money back.</p>
+              </a>
+            </div>
+            <p className="cta-guarantee">Free 45-minute call. No pressure. See if you are the right fit for us.</p>
           </div>
         </motion.div>
       </div>
@@ -494,7 +476,7 @@ function Chatbot() {
           body: JSON.stringify({
             contents: [{
               parts: [{
-                text: `You are a helpful assistant for Acquisition Pro Agency, a lead generation and customer acquisition company. Keep responses concise (2-3 sentences max) and helpful. Focus on lead generation, paid advertising, sales funnels, CRM automation, and appointment setting services. If asked about pricing, encourage them to book a free strategy call. Be friendly and professional.
+                text: `You are a helpful assistant for Acquisition Pro Agency, a lead generation and customer acquisition company. Keep responses concise (2-3 sentences max) and helpful. Focus on lead generation, paid advertising, sales funnels, CRM automation, and appointment setting services. If asked about pricing, encourage them to book a free discovery call. Be friendly and professional.
 
 User: ${userMessage}`
               }]
@@ -511,7 +493,7 @@ User: ${userMessage}`
         return
       }
 
-      const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'I\'d be happy to help! Please book a free strategy call to discuss your needs in detail.'
+      const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'I\'d be happy to help! Please book a free discovery call to discuss your needs in detail.'
 
       setMessages(prev => [...prev, { role: 'assistant', content: botResponse }])
     } catch (error) {
@@ -528,7 +510,7 @@ User: ${userMessage}`
         <div className="chatbot-window">
           <div className="chatbot-header">
             <div className="chatbot-header-info">
-              <div className="chatbot-avatar">AP</div>
+              <img src="/logo.jpg" alt="AcquisitionPro" className="chatbot-avatar-img" />
               <div>
                 <h4>Acquisition Pro</h4>
                 <span className="chatbot-status">Online</span>
@@ -599,17 +581,18 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#" className="logo">
+              <img src="/logo.jpg" alt="AcquisitionPro" className="logo-image" />
               Acquisition<span>Pro</span>
             </a>
-            <p>Building predictable revenue systems for ambitious businesses ready to scale.</p>
+            <p>Helping executive and leadership coaches add $5-10K to their monthly revenue through qualified appointments.</p>
           </div>
           <div className="footer-col">
             <h4>Services</h4>
             <ul>
-              <li><a href="#services">Lead Generation</a></li>
-              <li><a href="#services">Paid Ads</a></li>
-              <li><a href="#services">Sales Funnels</a></li>
-              <li><a href="#services">CRM Setup</a></li>
+              <li><a href="#services">LinkedIn Outreach</a></li>
+              <li><a href="#services">Meta & LinkedIn Ads</a></li>
+              <li><a href="#services">High-Ticket Funnels</a></li>
+              <li><a href="#services">Appointment Booking</a></li>
             </ul>
           </div>
           <div className="footer-col">

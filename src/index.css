@@ -1,13 +1,13 @@
 :root {
   /* Core Colors - Dark luxury with electric blue accent */
-  --black: #0a0a0a;
-  --black-light: #111111;
-  --black-lighter: #1a1a1a;
+  --black: #040F1E;
+  --black-light: #081828;
+  --black-lighter: #0c2035;
   --white: #fafafa;
   --white-dim: #a0a0a0;
-  --accent: #00a8ff;
-  --accent-dim: #0088cc;
-  --accent-glow: rgba(0, 168, 255, 0.15);
+  --accent: #3b82f6;
+  --accent-dim: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.15);
 
   /* Typography */
   --font-display: 'Clash Display', sans-serif;
