@@ -51,7 +51,7 @@ function Navigation() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#" className="logo"><img src="/logo.jpg" alt="AcquisitionPro" className="logo-image" />Acquisition<span>Pro</span></a>
+        <a href="#" className="logo"><img src="/logo-new.png" alt="AcquisitionPro" className="logo-image" /><span className="logo-text">Acquisition<span>Pro</span></span></a>
         <ul className="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
@@ -510,7 +510,7 @@ User: ${userMessage}`
         <div className="chatbot-window">
           <div className="chatbot-header">
             <div className="chatbot-header-info">
-              <img src="/logo.jpg" alt="AcquisitionPro" className="chatbot-avatar-img" />
+              <img src="/logo-new.png" alt="AcquisitionPro" className="chatbot-avatar-img" />
               <div>
                 <h4>Acquisition Pro</h4>
                 <span className="chatbot-status">Online</span>
