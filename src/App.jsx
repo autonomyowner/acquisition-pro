@@ -458,6 +458,139 @@ function CTASection() {
   )
 }
 
+// Chatbot Component
+function Chatbot() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [messages, setMessages] = useState([
+    { role: 'assistant', content: 'Hi! I\'m the Acquisition Pro assistant. How can I help you grow your business today?' }
+  ])
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
+  const sendMessage = async (e) => {
+    e.preventDefault()
+    if (!input.trim() || isLoading) return
+
+    const userMessage = input.trim()
+    setInput('')
+    setMessages(prev => [...prev, { role: 'user', content: userMessage }])
+    setIsLoading(true)
+
+    try {
+      const response = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDPpkC7iTfIZ1ab930AgEz6e7pfoSRRDLk',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{
+              parts: [{
+                text: `You are a helpful assistant for Acquisition Pro Agency, a lead generation and customer acquisition company. Keep responses concise (2-3 sentences max) and helpful. Focus on lead generation, paid advertising, sales funnels, CRM automation, and appointment setting services. If asked about pricing, encourage them to book a free strategy call. Be friendly and professional.
+
+User: ${userMessage}`
+              }]
+            }]
+          })
+        }
+      )
+
+      const data = await response.json()
+
+      if (data.error) {
+        console.error('Gemini API Error:', data.error)
+        setMessages(prev => [...prev, { role: 'assistant', content: `I'm having trouble connecting right now. Please email us or book a call directly!` }])
+        return
+      }
+
+      const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'I\'d be happy to help! Please book a free strategy call to discuss your needs in detail.'
+
+      setMessages(prev => [...prev, { role: 'assistant', content: botResponse }])
+    } catch (error) {
+      console.error('Chatbot Error:', error)
+      setMessages(prev => [...prev, { role: 'assistant', content: 'Connection issue. Please try again or contact us directly!' }])
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  return (
+    <div className="chatbot-container">
+      {isOpen && (
+        <div className="chatbot-window">
+          <div className="chatbot-header">
+            <div className="chatbot-header-info">
+              <div className="chatbot-avatar">AP</div>
+              <div>
+                <h4>Acquisition Pro</h4>
+                <span className="chatbot-status">Online</span>
+              </div>
+            </div>
+            <button className="chatbot-close" onClick={() => setIsOpen(false)}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="chatbot-messages">
+            {messages.map((msg, index) => (
+              <div key={index} className={`chatbot-message ${msg.role}`}>
+                {msg.content}
+              </div>
+            ))}
+            {isLoading && (
+              <div className="chatbot-message assistant">
+                <div className="chatbot-typing">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <form className="chatbot-input-form" onSubmit={sendMessage}>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your message..."
+              disabled={isLoading}
+            />
+            <button type="submit" disabled={isLoading || !input.trim()}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      )}
+
+      <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        )}
+      </button>
+    </div>
+  )
+}
+
 // Footer
 function Footer() {
   return (
@@ -536,6 +669,7 @@ function App() {
       <TestimonialsSection />
       <CTASection />
       <Footer />
+      <Chatbot />
     </>
   )
 }
