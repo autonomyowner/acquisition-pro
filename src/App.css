@@ -121,6 +121,35 @@
   transition: all 0.3s ease;
 }
 
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.mobile-menu {
+  display: none;
+  padding: 1rem var(--space-md) 1.5rem;
+  text-align: center;
+}
+
+.mobile-menu .btn-primary {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+}
+
 /* ============================================
    HERO SECTION
 ============================================ */
@@ -859,6 +888,22 @@
 .footer-bottom p {
   color: var(--white-dim);
   font-size: 0.9rem;
+}
+
+.footer-dev {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  margin-top: var(--space-md);
+}
+
+.footer-dev a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+.footer-dev a:hover {
+  color: var(--accent);
 }
 
 .footer-socials {

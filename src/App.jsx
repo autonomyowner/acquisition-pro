@@ -20,6 +20,7 @@ const staggerContainer = {
 // Navigation Component
 function Navigation() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -36,12 +37,22 @@ function Navigation() {
           <li><a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>Contact</a></li>
         </ul>
         <a href="#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>Get Started</a>
-        <button className="mobile-menu-btn">
+        <button className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
+      {menuOpen && (
+        <div className="mobile-menu">
+          <a href="https://calendly.com/acquisition-pro/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary" onClick={() => setMenuOpen(false)}>
+            Book Discovery Call
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      )}
     </nav>
   )
 }
@@ -264,6 +275,7 @@ function Footer() {
             </a>
           </div>
         </div>
+        <p className="footer-dev">by <a href="https://sitedz.store" target="_blank" rel="noopener noreferrer">SiteDz</a></p>
       </div>
     </footer>
   )
