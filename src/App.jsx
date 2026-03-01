@@ -5,15 +5,15 @@ import './App.css'
 
 // Animation variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
 }
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 }
   }
 }
 
@@ -32,11 +32,10 @@ function Navigation() {
       <div className="container nav-inner">
         <a href="#" className="logo"><img src="/logo-new.png" alt="AcquisitionPro" className="logo-image" /><span className="logo-text">Acquisition<span>Pro</span></span></a>
         <ul className="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#process" onClick={(e) => { e.preventDefault(); document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' }) }}>Process</a></li>
+          <li><a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>Contact</a></li>
         </ul>
-        <a href="#contact" className="nav-cta">Get Started</a>
+        <a href="#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>Get Started</a>
         <button className="mobile-menu-btn">
           <span></span>
           <span></span>
@@ -78,7 +77,7 @@ function Hero() {
           </motion.h1>
 
           <motion.p className="hero-description" variants={fadeInUp}>
-            We help executive and leadership coaches attract high-ticket clients through strategic LinkedIn outreach built for your niche.
+            We help executive and leadership coaches attract qualified clients through strategic LinkedIn outreach built for your niche.
           </motion.p>
 
           <motion.div className="hero-cta-group" variants={fadeInUp}>
@@ -88,7 +87,7 @@ function Hero() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="#services" className="btn-secondary">
+            <a href="#process" className="btn-secondary" onClick={(e) => { e.preventDefault(); document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' }) }}>
               See How It Works
             </a>
           </motion.div>
@@ -103,22 +102,22 @@ function Hero() {
 // Problem Section
 function ProblemSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
     <section className="problem-section" ref={ref}>
       <div className="container">
         <motion.div
-          className="problem-minimal"
+          className="problem-clean"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
         >
-          <motion.span className="section-label" variants={fadeInUp}>The Problem</motion.span>
           <motion.h2 className="problem-heading" variants={fadeInUp}>
             Most coaches don't have a consistent way to attract new clients.
           </motion.h2>
-          <motion.ul className="problem-list-minimal" variants={staggerContainer}>
+          <motion.div className="problem-divider" variants={fadeInUp} />
+          <motion.ul className="problem-list-clean" variants={staggerContainer}>
             <motion.li variants={fadeInUp}>Relying on referrals that come unpredictably</motion.li>
             <motion.li variants={fadeInUp}>Spending hours on social media with no return</motion.li>
             <motion.li variants={fadeInUp}>Discovery calls with people who aren't the right fit</motion.li>
@@ -130,56 +129,11 @@ function ProblemSection() {
   )
 }
 
-// Services Section
-function ServicesSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  return (
-    <section className="services-section" id="services" ref={ref}>
-      <div className="container">
-        <motion.div
-          className="section-header"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={fadeInUp}
-        >
-          <span className="section-label">What We Do</span>
-          <h2>Your Client Acquisition System</h2>
-          <p>A complete system designed to bring qualified coaching prospects to your calendar consistently.</p>
-        </motion.div>
-
-        <motion.div
-          className="service-hero-card"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={fadeInUp}
-        >
-          <div className="service-hero-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </div>
-          <h3>LinkedIn Outreach for Coaches</h3>
-          <p>We help executive and leadership coaches connect with qualified prospects through strategic LinkedIn outreach — so you can focus on coaching, not chasing leads.</p>
-          <a href="https://calendly.com/acquisition-pro/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Book Discovery Call
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
 
 // Process Section
 function ProcessSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   const steps = [
     {
@@ -235,7 +189,7 @@ function ProcessSection() {
 // CTA Section
 function CTASection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
     <section className="cta-section" id="contact" ref={ref}>
@@ -289,12 +243,6 @@ function Footer() {
             </div>
           </div>
           <div className="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#services">LinkedIn Outreach for Coaches</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
             <h4>Company</h4>
             <ul>
               <li><a href="#process">Our Process</a></li>
@@ -339,7 +287,6 @@ function App() {
       <Navigation />
       <Hero />
       <ProblemSection />
-      <ServicesSection />
       <ProcessSection />
       <CTASection />
       <Footer />
