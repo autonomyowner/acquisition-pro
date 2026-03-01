@@ -109,28 +109,21 @@ function ProblemSection() {
     <section className="problem-section" ref={ref}>
       <div className="container">
         <motion.div
-          className="problem-grid"
+          className="problem-minimal"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
         >
-          <motion.div className="problem-content" variants={fadeInUp}>
-            <span className="section-label">The Problem</span>
-            <h2>Most Coaches <span className="dim">Struggle</span> to Find Clients</h2>
-            <ul className="problem-list">
-              <li>Relying on referrals that come unpredictably</li>
-              <li>Spending hours on social media with no ROI</li>
-              <li>Discovery calls with people who can't afford your rates</li>
-              <li>No consistent system to attract new clients</li>
-            </ul>
-          </motion.div>
-          <motion.div className="problem-visual" variants={fadeInUp}>
-            <div className="problem-card">
-              <div className="problem-card-stat">?</div>
-              <div className="problem-card-text">Where's your next client coming from?</div>
-              <div className="problem-card-sub">Most coaches don't have a consistent system to attract new clients</div>
-            </div>
-          </motion.div>
+          <motion.span className="section-label" variants={fadeInUp}>The Problem</motion.span>
+          <motion.h2 className="problem-heading" variants={fadeInUp}>
+            Most coaches don't have a consistent way to attract new clients.
+          </motion.h2>
+          <motion.ul className="problem-list-minimal" variants={staggerContainer}>
+            <motion.li variants={fadeInUp}>Relying on referrals that come unpredictably</motion.li>
+            <motion.li variants={fadeInUp}>Spending hours on social media with no return</motion.li>
+            <motion.li variants={fadeInUp}>Discovery calls with people who aren't the right fit</motion.li>
+            <motion.li variants={fadeInUp}>No system to keep your calendar consistently full</motion.li>
+          </motion.ul>
         </motion.div>
       </div>
     </section>
