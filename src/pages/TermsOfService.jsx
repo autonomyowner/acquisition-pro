@@ -24,7 +24,7 @@ export default function TermsOfService() {
           <h2>1. Agreement to Terms</h2>
           <p>
             These Terms of Service ("Terms") constitute a legally binding agreement between you and
-            Acquisition Pro LLC ("we," "us," or "our") governing your use of our website at
+            AcquisitionPro LLC ("we," "us," or "our") governing your use of our website at
             acquisitions-pro.com (the "Site") and our lead generation, marketing, and client
             acquisition services (the "Services").
           </p>
@@ -36,7 +36,7 @@ export default function TermsOfService() {
 
         <section>
           <h2>2. Description of Services</h2>
-          <p>Acquisition Pro LLC provides LinkedIn outreach services for executive and leadership coaches. Our services may include:</p>
+          <p>AcquisitionPro LLC provides LinkedIn outreach services for executive and leadership coaches. Our services may include:</p>
           <ul>
             <li>LinkedIn outreach campaign setup and management</li>
             <li>LinkedIn profile optimization</li>
@@ -118,7 +118,7 @@ export default function TermsOfService() {
           <h2>8. Intellectual Property</h2>
           <p>
             All content on the Site, including text, graphics, logos, images, and software, is the
-            property of Acquisition Pro LLC and is protected by intellectual property laws. You may
+            property of AcquisitionPro LLC and is protected by intellectual property laws. You may
             not reproduce, distribute, or create derivative works from any content without our
             written permission.
           </p>
@@ -140,7 +140,7 @@ export default function TermsOfService() {
         <section>
           <h2>10. Limitation of Liability</h2>
           <p>
-            To the maximum extent permitted by law, Acquisition Pro LLC shall not be liable for any
+            To the maximum extent permitted by law, AcquisitionPro LLC shall not be liable for any
             indirect, incidental, special, consequential, or punitive damages, including but not
             limited to loss of profits, revenue, data, or business opportunities, arising from your
             use of our Site or Services.
@@ -154,7 +154,7 @@ export default function TermsOfService() {
         <section>
           <h2>11. Indemnification</h2>
           <p>
-            You agree to indemnify and hold harmless Acquisition Pro LLC, its officers, employees,
+            You agree to indemnify and hold harmless AcquisitionPro LLC, its officers, employees,
             and agents from any claims, damages, losses, or expenses arising from your use of the
             Services, violation of these Terms, or violation of any third-party rights.
           </p>
@@ -191,7 +191,7 @@ export default function TermsOfService() {
           <h2>15. Contact Us</h2>
           <p>If you have questions about these Terms, please contact us:</p>
           <ul className="contact-list">
-            <li><strong>Acquisition Pro LLC</strong></li>
+            <li><strong>AcquisitionPro LLC</strong></li>
             <li>Email: <a href="mailto:contact@acquisitions-pro.com">contact@acquisitions-pro.com</a></li>
             <li>Website: <a href="https://acquisitions-pro.com">acquisitions-pro.com</a></li>
           </ul>
@@ -200,7 +200,7 @@ export default function TermsOfService() {
 
       <footer className="legal-footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Acquisition Pro LLC. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AcquisitionPro LLC. All rights reserved.</p>
           <div className="legal-footer-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/refund-policy">Refund Policy</Link>

@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         <section>
           <h2>1. Introduction</h2>
           <p>
-            Acquisition Pro LLC ("we," "us," or "our") operates the website at acquisitions-pro.com
+            AcquisitionPro LLC ("we," "us," or "our") operates the website at acquisitions-pro.com
             (the "Site"). This Privacy Policy explains how we collect, use, disclose, and safeguard
             your information when you visit our Site or use our services.
           </p>
@@ -175,7 +175,7 @@ export default function PrivacyPolicy() {
           <h2>12. Contact Us</h2>
           <p>If you have questions about this Privacy Policy, please contact us:</p>
           <ul className="contact-list">
-            <li><strong>Acquisition Pro LLC</strong></li>
+            <li><strong>AcquisitionPro LLC</strong></li>
             <li>Email: <a href="mailto:contact@acquisitions-pro.com">contact@acquisitions-pro.com</a></li>
             <li>Website: <a href="https://acquisitions-pro.com">acquisitions-pro.com</a></li>
           </ul>
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
 
       <footer className="legal-footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Acquisition Pro LLC. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AcquisitionPro LLC. All rights reserved.</p>
           <div className="legal-footer-links">
             <Link to="/terms-of-service">Terms of Service</Link>
             <Link to="/refund-policy">Refund Policy</Link>

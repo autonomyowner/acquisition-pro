@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './App.css'
 
@@ -106,29 +106,26 @@ function Hero() {
 // Problem Section
 function ProblemSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.95", "start 0.3"] })
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const y = useTransform(scrollYProgress, [0, 1], [40, 0])
 
   return (
     <section className="problem-section" ref={ref}>
-      <div className="container">
-        <motion.div
-          className="problem-clean"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={staggerContainer}
-        >
-          <motion.h2 className="problem-heading" variants={fadeInUp}>
+      <motion.div className="container" style={{ opacity, y }}>
+        <div className="problem-clean">
+          <h2 className="problem-heading">
             Most coaches don't have a consistent way to attract new clients.
-          </motion.h2>
-          <motion.div className="problem-divider" variants={fadeInUp} />
-          <motion.ul className="problem-list-clean" variants={staggerContainer}>
-            <motion.li variants={fadeInUp}>Relying on referrals that come unpredictably</motion.li>
-            <motion.li variants={fadeInUp}>Spending hours on social media with no return</motion.li>
-            <motion.li variants={fadeInUp}>Discovery calls with people who aren't the right fit</motion.li>
-            <motion.li variants={fadeInUp}>No system to keep your calendar consistently full</motion.li>
-          </motion.ul>
-        </motion.div>
-      </div>
+          </h2>
+          <div className="problem-divider" />
+          <ul className="problem-list-clean">
+            <li>Relying on referrals that come unpredictably</li>
+            <li>Spending hours on social media with no return</li>
+            <li>Discovery calls with people who aren't the right fit</li>
+            <li>No system to keep your calendar consistently full</li>
+          </ul>
+        </div>
+      </motion.div>
     </section>
   )
 }
@@ -137,7 +134,9 @@ function ProblemSection() {
 // Process Section
 function ProcessSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.95", "start 0.3"] })
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const y = useTransform(scrollYProgress, [0, 1], [40, 0])
 
   const steps = [
     {
@@ -156,35 +155,25 @@ function ProcessSection() {
 
   return (
     <section className="process-section" id="process" ref={ref}>
-      <div className="container">
-        <motion.div
-          className="section-header"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={fadeInUp}
-        >
+      <motion.div className="container" style={{ opacity, y }}>
+        <div className="section-header">
           <span className="section-label">How It Works</span>
           <h2>How We Work With You</h2>
           <p>Our step-by-step process is designed to bring qualified coaching prospects to your calendar.</p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="process-timeline"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={staggerContainer}
-        >
+        <div className="process-timeline">
           {steps.map((step, index) => (
-            <motion.div key={index} className="process-step" variants={fadeInUp}>
+            <div key={index} className="process-step">
               <div className="process-step-number">{step.number}</div>
               <div className="process-step-content">
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
@@ -193,17 +182,14 @@ function ProcessSection() {
 // CTA Section
 function CTASection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.95", "start 0.3"] })
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const y = useTransform(scrollYProgress, [0, 1], [40, 0])
 
   return (
     <section className="cta-section" id="contact" ref={ref}>
-      <div className="container">
-        <motion.div
-          className="cta-card"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={fadeInUp}
-        >
+      <motion.div className="container" style={{ opacity, y }}>
+        <div className="cta-card">
           <div className="cta-content">
             <h2>Ready to Grow Your <span className="highlight">Practice</span>?</h2>
             <p>Book a demo call and let's discuss how we can help you attract more qualified coaching clients.</p>
@@ -215,10 +201,10 @@ function CTASection() {
                 </svg>
               </a>
             </div>
-            <p className="cta-guarantee">Free 45-minute call. No pressure. See if you are the right fit for us.</p>
+            <p className="cta-guarantee">45-minute call. No pressure. See if you are the right fit for us.</p>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }

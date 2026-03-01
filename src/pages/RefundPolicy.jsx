@@ -23,7 +23,7 @@ export default function RefundPolicy() {
         <section>
           <h2>1. Overview</h2>
           <p>
-            At Acquisition Pro LLC, we are committed to delivering high-quality lead generation and
+            At AcquisitionPro LLC, we are committed to delivering high-quality lead generation and
             client acquisition services for executive and leadership coaches. We understand that
             circumstances may change, and this policy outlines our refund and cancellation procedures.
           </p>
@@ -138,7 +138,7 @@ export default function RefundPolicy() {
           <h2>9. Contact Us</h2>
           <p>For refund requests or questions about this policy:</p>
           <ul className="contact-list">
-            <li><strong>Acquisition Pro LLC</strong></li>
+            <li><strong>AcquisitionPro LLC</strong></li>
             <li>Email: <a href="mailto:contact@acquisitions-pro.com">contact@acquisitions-pro.com</a></li>
             <li>Website: <a href="https://acquisitions-pro.com">acquisitions-pro.com</a></li>
           </ul>
@@ -147,7 +147,7 @@ export default function RefundPolicy() {
 
       <footer className="legal-footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Acquisition Pro LLC. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AcquisitionPro LLC. All rights reserved.</p>
           <div className="legal-footer-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
