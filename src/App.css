@@ -1282,3 +1282,430 @@
     right: -8px;
   }
 }
+
+/* ============================================
+   SERVICE HERO CARD
+============================================ */
+.service-hero-card {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.service-hero-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.service-hero-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1.25rem;
+  background: var(--accent-glow);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.service-hero-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-hero-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.service-hero-card p {
+  font-size: 0.95rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.service-hero-card .btn-primary {
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .service-hero-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ============================================
+   CHATBOT AI DISCLOSURE
+============================================ */
+.chatbot-ai-disclosure {
+  text-align: center;
+  padding: 6px 16px;
+  font-size: 0.7rem;
+  color: var(--white-dim);
+  background: rgba(59, 130, 246, 0.08);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ============================================
+   PRICING SECTION
+============================================ */
+.pricing-section {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: var(--black-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.pricing-card:hover {
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-4px);
+}
+
+.pricing-highlighted {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--black-lighter), var(--black-light));
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 20px;
+  background: var(--accent);
+  color: var(--black);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.pricing-price {
+  margin-bottom: 0.75rem;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 1rem;
+  color: var(--white-dim);
+}
+
+.pricing-description {
+  font-size: 0.95rem;
+  color: var(--white-dim);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.pricing-disclaimer {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================
+   RESULTS DISCLAIMER
+============================================ */
+.results-disclaimer {
+  text-align: center;
+  margin-top: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.results-disclaimer a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ============================================
+   FOOTER ADDITIONS
+============================================ */
+.footer-contact-info {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact-info p {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+.footer-contact-info a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.footer-contact-info a:hover {
+  color: var(--white);
+}
+
+.footer-payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: var(--space-md) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.footer-payment-label {
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.footer-payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 0.6;
+}
+
+.payment-icon {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   LEGAL PAGES
+============================================ */
+.legal-page {
+  min-height: 100vh;
+  background: var(--black);
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 120px;
+  padding-bottom: var(--space-xl);
+}
+
+.legal-container h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.legal-updated {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-container section {
+  margin-bottom: var(--space-lg);
+}
+
+.legal-container h2 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.legal-container h3 {
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-container p {
+  font-size: 1rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.legal-container ul,
+.legal-container ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-container li {
+  font-size: 1rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.legal-container a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.legal-container a:hover {
+  color: var(--white);
+}
+
+.legal-container .contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.legal-container strong {
+  color: var(--white);
+}
+
+.legal-footer {
+  padding: var(--space-md) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.legal-footer p {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+}
+
+.legal-footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.legal-footer-links a {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  transition: color 0.3s ease;
+}
+
+.legal-footer-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding-top: 100px;
+  }
+
+  .legal-footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legal-footer-links {
+    justify-content: center;
+  }
+}
